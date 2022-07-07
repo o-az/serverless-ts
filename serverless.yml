@@ -1,0 +1,58 @@
+org: amorfati
+console: true
+service: edge-service
+
+frameworkVersion: '3'
+useDotenv: true
+deprecationNotificationMode: warn:summary
+
+###############
+### PLUGINS ###
+###############
+plugins:
+  - serverless-plugin-typescript
+  - serverless-offline
+
+################
+### PROVIDER ###
+################
+provider:
+  name: aws
+  runtime: nodejs16.x
+  region: us-east-2
+  deploymentPrefix: serverless
+  environment:
+    NODE_ENV: dev
+
+#################
+### FUNCTIONS ###
+#################
+functions:
+  hello:
+    handler: src/functions/hello.handler
+    events:
+      - http:
+          path: edge-service/hello
+          method: GET
+
+#################
+### RESOURCES ###
+#################
+resources:
+  Resources:
+    SNSHelloEvent:
+      Type: AWS::SNS::Topic
+      Properties:
+        DisplayName: Hello Event Topic
+        TopicName: hello-event
+
+
+#################
+#### PACKAGE ####
+#################
+package:
+  patterns:
+    - 'src/**/*'
+    - 'src/*'
+  individually: false
+  excludeDevDependencies: true

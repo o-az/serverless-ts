@@ -1,0 +1,72 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "CommonJS",
+    "lib": [
+      "DOM",
+      "DOM.Iterable",
+      "ESNext"
+    ],
+    "strict": true,
+    "pretty": true,
+    "baseUrl": "./",
+    "allowJs": true,
+    "checkJs": true,
+    "sourceMap": true,
+    "declaration": true,
+    "skipLibCheck": true,
+    "alwaysStrict": true,
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "removeComments": true,
+    "declarationMap": true,
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "strictNullChecks": true,
+    "noImplicitReturns": true,
+    "resolveJsonModule": true,
+    "allowUnusedLabels": true,
+    "noImplicitOverride": true,
+    "preserveConstEnums": true,
+    "moduleResolution": "Node",
+    "preserveWatchOutput": true,
+    "allowUnreachableCode": false,
+    "useDefineForClassFields": true,
+    "noUncheckedIndexedAccess": true,
+    "importsNotUsedAsValues": "error",
+    "noFallthroughCasesInSwitch": true,
+    "exactOptionalPropertyTypes": true,
+    "useUnknownInCatchVariables": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "paths": {
+      "@/*": [
+        "src/*",
+      ],
+    },
+    "types": [
+      "@types/node",
+      "bun-types"
+    ]
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "package.json",
+    "**/node_modules/**",
+    ".scratch",
+    ".scratch/**",
+
+  ],
+  "ts-node": {
+    "swc": true,
+    "esm": true,
+    "transpileOnly": true,
+    "require": [
+      "tsconfig-paths/register"
+    ],
+  }
+}

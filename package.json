@@ -1,0 +1,47 @@
+{
+  "name": "x",
+  "bun": {
+
+  },
+  "scripts": {
+    "dev": "serverless offline -s dev",
+    "local": "serverless offline",
+    "deploy": "serverless deploy -s dev",
+    "tsnode": "node --experimental-specifier-resolution=node --loader ts-node/esm $npm_config_path",
+    "lint": "npx eslint --fix ./src",
+    "format": "npx prettier --write ./src",
+    "clean": "rimraf node_modules .build .serverless",
+    "clean-start": "yarn clean && yarn run dev",
+    "nuke": "rimraf dist node_modules package-lock.json yarn.lock pnpm-lock.yaml bun.lockb .build .cache .dir .serverless"
+  },
+  "dependencies": {
+    "aws-lambda": "^1.0.7"
+  },
+  "devDependencies": {
+    "@swc/core": "^1.2.210",
+    "@types/aws-lambda": "^8.10.101",
+    "@types/dotenv-safe": "^8.1.2",
+    "@types/eslint": "^8.4.5",
+    "@types/mocha": "^9.1.1",
+    "@types/node": "^18.0.3",
+    "@types/prettier": "^2.6.3",
+    "@typescript-eslint/eslint-plugin": "^5.30.5",
+    "@typescript-eslint/parser": "^5.30.5",
+    "bun-types": "^0.0.83",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.0.1",
+    "eslint": "^8.19.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.7.1",
+    "rimraf": "^3.0.2",
+    "serverless-offline": "^8.8.0",
+    "serverless-plugin-typescript": "^2.1.2",
+    "ts-node": "^10.8.2",
+    "typescript": "^4.7.4",
+    "@types/serverless": "^3.12.7",
+    "nodemon": "^2.0.19",
+    "serverless": "^3.19.0"
+  }
+}
